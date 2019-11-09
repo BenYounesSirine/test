@@ -1,0 +1,57 @@
+<h1>Affichage des etudiants</h1>
+<!--  <ul>
+   <li>Etudiant num 1</li>
+        <ul *ngFor="let t of etudiants; let i =index ">
+            <div *ngIf="i==0">
+            <li>{{etudiants[0].prenom}} {{etudiants[0].nom|uppercase}}</li>
+            <li>{{etudiants[0].date|date}}</li>
+            <li [ngClass]="'c2'">{{etudiants[0].moyenne}}:Mention Assez Bien</li>
+            </div>
+        </ul>
+    <li>Etudiant num 2</li>
+         <ul *ngFor="let t of etudiants; let i =index ">
+            <div *ngIf="i==1">
+            <li>{{etudiants[1].prenom}} {{etudiants[1].nom|uppercase}}</li>
+            <li>{{etudiants[1].date|date}}</li>
+            <li [ngClass]="'c2'">{{etudiants[1].moyenne}}:Mention Bien</li>
+            <li>{{etudiants[1].ville}}</li>
+
+            </div>
+        </ul>
+    <li>Etudiant num 3</li>
+        <ul *ngFor="let t of etudiants; let i =index ">
+            <div *ngIf="i==2">
+            <li>{{etudiants[2].prenom}} {{etudiants[2].nom|uppercase}}</li>
+            <li>{{etudiants[2].date|date}}</li>
+            <li [ngClass]="'c2'">{{etudiants[2].moyenne}}:Mention Passable</li>
+            </div>
+        </ul>
+    <li>Etudinat num 4</li>
+        <ul *ngFor="let t of etudiants; let i =index ">
+            <div *ngIf="i==3">
+            <li>{{etudiants[3].prenom}} {{etudiants[3].nom|uppercase}}</li>
+            <li>{{etudiants[3].date|date}}</li>
+            <li [ngClass]="etudiants[i].moyenne>16?'c1':'c2'">
+                {{etudiants[3].moyenne}}:Mention Tres Biens</li>
+            <li>{{etudiants[3].ville}}</li>
+
+            </div>
+        </ul>
+    </ul>-->
+
+
+   <ul *ngFor="let t of etudiants; let i=index">
+     <li>Etudiants num {{i+1}}</li>
+     <ul>
+         <li>{{t.prenom}}{{t.nom|uppercase}}</li>
+         <li>{{etudiants[i].date|date</li>
+        <li [ngClass]="etudiants[i].moyenne>16?'c1':'c2'">{{t.moyenne}}
+            <div [ngSwitch]="true">
+                <div *ngSwitchCase="t.moyenne<16">Mention bien</div>
+                <div *ngSwitchDefault>Mention tres bien</div>
+            </div>
+        </li>
+        <li *ngIf="etudiants[i].ville!='Tunis'">{{etudiants[i].ville}}</li>
+     </ul>
+    </ul>
+

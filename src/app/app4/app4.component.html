@@ -1,0 +1,6 @@
+<ul>
+        <li > {{employe.nom |uppercase|nomPerso}}</li><!--voir :nom-perso.pipe.ts cree par la cmd :ng g pipe nomPerso --skip-tests -->
+        <li> {{employe.prenom |lowercase}}</li>
+        <li> {{employe.date |date:'medium'}}</li>
+        <li> {{employe.salaire |currency}}</li>
+</ul>
